@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portefølje</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ECEEE9;--surface:#FFFFFF;--surface-2:#F6F7F3;--ink:#16201C;--muted:#5E6A63;--faint:#8B958D;
+  --line:#DBDFD6;--line-strong:#C6CCBF;--brand:#0E5C4A;--brand-2:#15795F;--brass:#A9791F;--brass-2:#C79A3C;
+  --aktie:#5C7689;--akk:#A99F86;--pos:#1C7A55;--neg:#B23B3B;--r:14px;
+  --shadow:0 1px 2px rgba(22,32,28,.05),0 12px 30px -18px rgba(22,32,28,.22);--mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;padding:clamp(14px,3vw,40px)}
+.wrap{max-width:1140px;margin:0 auto}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
+.pos{color:var(--pos)}.neg{color:var(--neg)}
+/* status */
+.status{max-width:520px;margin:14vh auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  box-shadow:var(--shadow);padding:30px 28px;text-align:center;color:var(--muted)}
+.status h2{font-family:'Fraunces',serif;font-weight:500;color:var(--ink);margin:0 0 8px}
+.status code{font-family:var(--mono);font-size:12px;background:var(--surface-2);padding:2px 6px;border-radius:5px}
+.spin{width:26px;height:26px;border:3px solid var(--line);border-top-color:var(--brand);border-radius:50%;margin:0 auto 16px;animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+/* header */
+.head{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:flex-end;justify-content:space-between;margin-bottom:22px}
+.brandmark{display:flex;align-items:center;gap:13px}
+.dot{width:30px;height:30px;border-radius:8px;flex:none;background:radial-gradient(120% 120% at 30% 25%,var(--brand-2),var(--brand));box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+.brandmark h1{font-family:'Fraunces',serif;font-weight:400;font-size:25px;letter-spacing:-.01em;margin:0;line-height:1}
+.brandmark .sub{font-size:12.5px;color:var(--muted);margin-top:3px}
+.meta{display:flex;gap:22px;text-align:right;flex-wrap:wrap;justify-content:flex-end}
+.meta .k{font-size:10.5px;text-transform:uppercase;letter-spacing:.09em;color:var(--faint)}
+.meta .v{font-family:var(--mono);font-size:13px;margin-top:2px}
+/* controls */
+.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:16px}
+.segmented{display:inline-flex;flex-wrap:wrap;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:5px;box-shadow:var(--shadow)}
+.segmented button{border:0;background:transparent;font:inherit;font-size:13px;color:var(--muted);padding:8px 14px;border-radius:8px;cursor:pointer;line-height:1;white-space:nowrap;transition:all .15s}
+.segmented button:hover{color:var(--ink)}
+.segmented button.on{background:var(--brand);color:#fff;font-weight:500;box-shadow:0 1px 4px rgba(14,92,74,.3)}
+.unit{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px;box-shadow:var(--shadow)}
+.unit button{border:0;background:transparent;font:inherit;font-size:13px;color:var(--muted);padding:7px 16px;border-radius:999px;cursor:pointer;line-height:1}
+.unit button.on{background:var(--brass);color:#fff;font-weight:500}
+/* hero */
+.hero{background:linear-gradient(165deg,#0E5C4A,#0a4537);color:#eaf3ef;border-radius:18px;padding:clamp(22px,4vw,36px);box-shadow:var(--shadow);margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(199,154,60,.18),transparent 70%)}
+.hero .eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9ec6b8;font-weight:600}
+.hero .big{font-family:'Fraunces',serif;font-weight:400;letter-spacing:-.02em;font-size:clamp(44px,8vw,72px);line-height:1;margin:12px 0 6px;font-variant-numeric:tabular-nums}
+.hero .alt{font-family:var(--mono);font-size:15px;color:#bfe0d4}
+.hero .breakdown{display:flex;gap:24px;flex-wrap:wrap;margin-top:18px;border-top:1px solid rgba(255,255,255,.14);padding-top:16px}
+.hero .bd{font-size:12.5px;color:#9ec6b8}
+.hero .bd b{display:block;font-family:var(--mono);font-size:17px;color:#fff;font-weight:500;margin-top:3px}
+.hero .bd b.brass{color:#e8c87f}
+/* chips */
+.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px}
+.chip{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:15px 17px;box-shadow:var(--shadow)}
+.chip .lab{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);display:flex;align-items:center;gap:7px}
+.chip .v{font-family:'Fraunces',serif;font-size:24px;margin-top:6px;font-variant-numeric:tabular-nums}
+.chip .v .cur{font-size:.55em;color:var(--muted);font-family:'Inter';font-weight:500;margin-left:3px}
+.chip.brass{border-left:4px solid var(--brass)}
+.tick{width:8px;height:8px;border-radius:2px}
+/* panels */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:20px;margin-bottom:18px}
+.panel-h{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:4px}
+.panel-h h2{font-family:'Fraunces',serif;font-weight:500;font-size:19px;margin:0;letter-spacing:-.01em}
+.panel-h .note{font-size:12px;color:var(--muted)}
+.eyebrow-b{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);font-weight:600;margin-bottom:9px}
+.dv-row{display:grid;grid-template-columns:172px 1fr auto;align-items:center;gap:14px;padding:8px 0;border-bottom:1px solid var(--surface-2)}
+.dv-row:last-child{border-bottom:0}
+.dv-name{font-size:12.5px;font-weight:500;line-height:1.25}
+.dv-name small{display:block;color:var(--faint);font-weight:400;font-size:10.5px;font-family:var(--mono)}
+.dv-track{height:22px;background:var(--surface-2);border-radius:5px;overflow:hidden}
+.dv-bar{height:100%;border-radius:5px;background:linear-gradient(90deg,var(--brass),var(--brass-2));width:0;transition:width 1s cubic-bezier(.22,1,.36,1)}
+.dv-val{font-family:var(--mono);font-size:13px;text-align:right;min-width:118px}
+.dv-val .pct{color:var(--muted);font-size:11px;margin-left:7px}
+.dv-callout{margin-top:13px;font-size:12.5px;color:var(--muted);display:flex;gap:18px;flex-wrap:wrap}
+.dv-callout b{color:var(--brass);font-weight:600}
+.alloc-bar{display:flex;height:30px;border-radius:7px;overflow:hidden;margin:4px 0 14px;border:1px solid var(--line)}
+.alloc-seg{height:100%;transition:filter .15s}
+.alloc-seg:hover{filter:brightness(1.08)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 22px}
+.legend .li{display:flex;align-items:center;gap:8px;font-size:12.5px}
+.legend .sw{width:11px;height:11px;border-radius:3px;flex:none}
+.legend .amt{font-family:var(--mono);color:var(--muted)}
+.tbl-scroll{overflow-x:auto;margin:0 -20px;padding:0 20px}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:640px}
+thead th{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600;text-align:right;padding:8px 10px;border-bottom:1.5px solid var(--line-strong);white-space:nowrap;cursor:pointer;user-select:none}
+thead th:first-child{text-align:left}
+thead th .ar{opacity:.35;font-size:9px;margin-left:3px}
+thead th[aria-sort="descending"] .ar,thead th[aria-sort="ascending"] .ar{opacity:1;color:var(--brand)}
+tbody td{padding:10px;border-bottom:1px solid var(--surface-2);text-align:right;white-space:nowrap}
+tbody td:first-child{text-align:left}
+tbody tr:hover{background:var(--surface-2)}
+.nm{display:flex;align-items:center;gap:9px}
+.cat-dot{width:9px;height:9px;border-radius:3px;flex:none}
+.nm .t{font-weight:500}
+.nm .tk{display:block;font-size:10px;color:var(--faint);font-family:var(--mono)}
+.badge{font-size:9.5px;font-family:var(--mono);padding:1px 6px;border-radius:5px;background:var(--surface-2);color:var(--muted);border:1px solid var(--line);margin-left:5px}
+.badge.guard{background:#fbeede;color:#9a6a16;border-color:#f0d9b0}
+.badge.q{background:#eef1f4;color:#5c7689}
+.udb .y{color:var(--faint);font-size:11px;margin-left:6px}
+.afk{font-weight:600}
+tfoot td{padding:12px 10px;font-weight:600;border-top:1.5px solid var(--line-strong);text-align:right}
+tfoot td:first-child{text-align:left;font-family:'Inter'}
+.foot-notes{font-size:12px;color:var(--muted);line-height:1.6}
+.foot-notes h3{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--faint);margin:0 0 8px}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:26px}
+.foot-notes .badge{margin:0 4px 0 0}
+.sig{margin-top:18px;font-size:11.5px;color:var(--faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;border-top:1px solid var(--line);padding-top:14px}
+@media(max-width:820px){.chips{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}
+  .dv-row{grid-template-columns:120px 1fr;grid-template-areas:"n v" "b b";gap:6px 12px}
+  .dv-name{grid-area:n}.dv-val{grid-area:v}.dv-track{grid-area:b}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}.spin{animation:none}}
+:focus-visible{outline:2.5px solid var(--brand-2);outline-offset:2px;border-radius:6px}
+</style>
+</head>
+<body>
+
+<!-- vises mens data hentes / ved fejl -->
+<div id="status" class="status">
+  <div class="spin"></div>
+  <h2>Henter porteføljedata…</h2>
+  <p>Indlæser <code>portfolio.json</code></p>
+</div>
+
+<div class="wrap" id="app" style="display:none">
+  <header class="head">
+    <div class="brandmark"><div class="dot"></div><div><h1>Portefølje</h1><div class="sub" id="sub"></div></div></div>
+    <div class="meta" id="meta"></div>
+  </header>
+  <div class="controls">
+    <div class="segmented" id="periods" role="group" aria-label="Vælg periode"></div>
+    <div class="unit" role="group" aria-label="Vis som">
+      <button id="u-kr" class="on" aria-pressed="true">Kroner</button>
+      <button id="u-pct" aria-pressed="false">Procent</button>
+    </div>
+  </div>
+  <section class="hero" aria-live="polite">
+    <div class="eyebrow" id="hero-eyebrow"></div>
+    <div class="big" id="hero-big"></div>
+    <div class="alt" id="hero-alt"></div>
+    <div class="breakdown" id="hero-bd"></div>
+  </section>
+  <section class="chips" id="chips"></section>
+  <section class="panel">
+    <div class="eyebrow-b">Signatur · hvor kommer udbyttet fra</div>
+    <div class="panel-h"><h2>Udbytte-motoren</h2><div class="note">Brutto · år-til-dato</div></div>
+    <div id="divchart" style="margin-top:10px"></div>
+    <div class="dv-callout" id="divcallout"></div>
+  </section>
+  <section class="panel">
+    <div class="panel-h"><h2>Porteføljefordeling</h2><div class="note">Andel af samlet værdi</div></div>
+    <div class="alloc-bar" id="allocbar"></div>
+    <div class="legend" id="alloclegend"></div>
+  </section>
+  <section class="panel">
+    <div class="panel-h"><h2>Beholdning</h2><div class="note" id="tblcount"></div></div>
+    <div class="tbl-scroll"><table id="tbl"><thead><tr id="thead"></tr></thead><tbody id="tbody"></tbody><tfoot id="tfoot"></tfoot></table></div>
+  </section>
+  <section class="panel">
+    <div class="foot-grid foot-notes">
+      <div><h3>Sådan læses tallene</h3>
+        <p><b>I år · inkl. udbytte</b> er kursgevinst år-til-dato plus årets udbytte. De øvrige perioder viser <b>kursafkast</b> for din nuværende beholdning over vinduet.</p>
+        <p>Kursafkast regnes på det antal, du ejer nu — det kan afvige nogle få procent fra det realiserede, da der købes løbende op.</p></div>
+      <div><h3>Forbehold &amp; markeringer</h3>
+        <p><span class="badge guard">guard</span>iShares Clean Energy: yfinances London-tal er upålideligt — udbyttet er sat lavt og realistisk.</p>
+        <p><span class="badge q">?</span>Storebrand: ingen udbyttedata. Kvartalsbetalere (Coca-Cola) tælles efter ex-dato.</p></div>
+    </div>
+    <div class="sig"><span>Kilde: Nordnet beholdning + yfinance · alle beløb brutto (før skat)</span><span id="updated"></span></div>
+  </section>
+</div>
+
+<script>
+/* ===========================================================================
+   STATISK SIDE — denne fil skal normalt ALDRIG ændres.
+   Alt data hentes fra portfolio.json (samme mappe). Oscar opdaterer KUN JSON'en.
+   =========================================================================== */
+const CAT={fond:{label:"Distribuerende fonde",color:"#0E5C4A"},
+  aktie:{label:"Enkeltaktier",color:"#5C7689"},akk:{label:"Akkumulerende fonde",color:"#A99F86"}};
+const catOf=h=>CAT[h.kat]||{label:h.kat||"Andet",color:"#9aa39c"};
+const da0=n=>Math.round(n).toLocaleString('da-DK');
+const da2=n=>n.toLocaleString('da-DK',{minimumFractionDigits:2,maximumFractionDigits:2});
+const sign=n=>n>=0?'+':'−';
+const krS=n=>sign(n)+da0(Math.abs(n))+' kr';
+const krA=n=>da0(n)+' kr';
+const pctS=(n,d=1)=>sign(n)+Math.abs(n).toLocaleString('da-DK',{minimumFractionDigits:d,maximumFractionDigits:d})+'%';
+const cls=n=>n>=0?'pos':'neg';
+const PERIODS={
+  ytd_m:{lab:"I år · inkl. udbytte",short:"I år · m/udb",kind:"period",base:"ytd",div:true},
+  ytd:  {lab:"I år · uden udbytte", short:"I år · u/udb",kind:"period",base:"ytd",div:false},
+  siden:{lab:"Siden anskaffelse",   short:"Siden køb",   kind:"siden"},
+  m3:   {lab:"Seneste 3 måneder",   short:"3 mdr",       kind:"period",base:"m3",div:false},
+  m1:   {lab:"Seneste måned",       short:"1 md",        kind:"period",base:"m1",div:false},
+  w1:   {lab:"Seneste uge",         short:"1 uge",       kind:"period",base:"w1",div:false}
+};
+const ORDER=["ytd_m","ytd","siden","m3","m1","w1"];
+let META,HOLDINGS,T,period="ytd_m",unit="kr",sortKey="vaerdiDKK",sortDir=-1;
+
+function calc(h,pid){
+  const P=PERIODS[pid];
+  if(P.kind==="siden")return{pct:h.sidenU,kr:h.afkastDKK,ok:true};
+  const r=h.ret?h.ret[P.base]:null;
+  if(r==null)return{pct:null,kr:null,ok:false};
+  let kr=h.vaerdiDKK*(r/100)/(1+r/100),pct=r;
+  if(P.div){pct+=h.udbDKK/h.vaerdiDKK*100;kr+=h.udbDKK;}
+  return{pct,kr,ok:true};
+}
+function total(pid){let kr=0,wn=0,wd=0;HOLDINGS.forEach(h=>{const c=calc(h,pid);if(c.ok){kr+=c.kr;wn+=h.vaerdiDKK*c.pct;wd+=h.vaerdiDKK;}});return{kr,pct:wd?wn/wd:0};}
+function afkVal(h){const c=calc(h,period);return c.ok?(unit==='kr'?c.kr:c.pct):null;}
+
+function renderHeader(){
+  document.getElementById('sub').textContent=META.konto||'';
+  document.getElementById('meta').innerHTML=
+    `<div><div class="k">Periode</div><div class="v">${META.periode||''}</div></div>`+
+    `<div><div class="k">Valutakurser</div><div class="v">${META.valutakurser||''}</div></div>`;
+  document.getElementById('updated').textContent='Opdateret '+(META.opdateret||'');
+}
+function renderControls(){
+  document.getElementById('periods').innerHTML=ORDER.map(id=>
+    `<button data-p="${id}" class="${id===period?'on':''}" aria-pressed="${id===period}">${PERIODS[id].short}</button>`).join('');
+  document.querySelectorAll('#periods button').forEach(b=>b.onclick=()=>{period=b.dataset.p;sync();renderHero();renderTable();});
+  document.getElementById('u-kr').onclick=()=>{unit='kr';sync();renderHero();renderTable();};
+  document.getElementById('u-pct').onclick=()=>{unit='pct';sync();renderHero();renderTable();};
+}
+function sync(){
+  document.querySelectorAll('#periods button').forEach(b=>{const on=b.dataset.p===period;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);});
+  document.getElementById('u-kr').classList.toggle('on',unit==='kr');
+  document.getElementById('u-pct').classList.toggle('on',unit==='pct');
+  document.getElementById('u-kr').setAttribute('aria-pressed',unit==='kr');
+  document.getElementById('u-pct').setAttribute('aria-pressed',unit==='pct');
+}
+function renderHero(){
+  const P=PERIODS[period],tot=total(period);
+  document.getElementById('hero-eyebrow').textContent='Afkast · '+P.lab;
+  const val=unit==='kr'?krS(tot.kr):pctS(tot.pct,1);
+  const c=(unit==='kr'?tot.kr:tot.pct)>=0?'#bfe9d6':'#f4b8b0';
+  document.getElementById('hero-big').innerHTML=`<span style="color:${c}">${val}</span>`;
+  document.getElementById('hero-alt').textContent=unit==='kr'?'svarer til '+pctS(tot.pct,1)+' af porteføljen':'svarer til '+krS(tot.kr);
+  const bd=document.getElementById('hero-bd');
+  if(P.kind==='period'&&P.div){
+    const price=tot.kr-T.udb;
+    bd.innerHTML=`<div class="bd">Kursgevinst i år<b>${krS(price)}</b></div>`+
+      `<div class="bd">Udbytte (brutto)<b class="brass">${krA(T.udb)}</b></div>`+
+      `<div class="bd">Porteføljeværdi<b>${krA(T.vaerdi)}</b></div>`;
+  }else{
+    bd.innerHTML=`<div class="bd">Porteføljeværdi<b>${krA(T.vaerdi)}</b></div>`+
+      `<div class="bd">Udbytte i år (brutto)<b class="brass">${krA(T.udb)}</b></div>`+
+      `<div class="bd">Antal papirer<b>${HOLDINGS.length}</b></div>`;
+  }
+}
+function renderChips(){
+  document.getElementById('chips').innerHTML=`
+    <div class="chip"><div class="lab">Porteføljeværdi</div><div class="v">${da0(T.vaerdi)}<span class="cur">kr</span></div></div>
+    <div class="chip brass"><div class="lab"><span class="tick" style="background:var(--brass)"></span>Udbytte brutto i år</div><div class="v">${da0(T.udb)}<span class="cur">kr</span></div></div>
+    <div class="chip"><div class="lab">Direkte afkast</div><div class="v">${da2(T.yield)}<span class="cur">%</span></div></div>`;
+}
+function renderDividends(){
+  const payers=HOLDINGS.filter(h=>h.udbDKK>0).sort((a,b)=>b.udbDKK-a.udbDKK);
+  const max=payers[0]?payers[0].udbDKK:1;
+  const host=document.getElementById('divchart');
+  if(!payers.length){host.innerHTML='<p style="color:var(--faint);font-size:13px">Ingen udbytter registreret i år endnu.</p>';document.getElementById('divcallout').innerHTML='';return;}
+  host.innerHTML=payers.map(h=>`<div class="dv-row">
+      <div class="dv-name">${h.navn}<small>${h.ticker||'—'}</small></div>
+      <div class="dv-track"><div class="dv-bar" data-w="${(h.udbDKK/max*100).toFixed(1)}"></div></div>
+      <div class="dv-val">${da0(h.udbDKK)} kr<span class="pct">${da2(h.udbDKK/T.udb*100)}%</span></div></div>`).join('');
+  requestAnimationFrame(()=>requestAnimationFrame(()=>host.querySelectorAll('.dv-bar').forEach(b=>b.style.width=b.dataset.w+'%')));
+  const top1=payers[0].udbDKK/T.udb*100, top2=payers.slice(0,2).reduce((s,h)=>s+h.udbDKK,0)/T.udb*100;
+  document.getElementById('divcallout').innerHTML=
+    `<span>Største bidragyder: <b>${da2(top1)}%</b></span><span>Top 2: <b>${da2(top2)}%</b></span><span>${payers.length} udbyttebetalere</span>`;
+}
+function renderAllocation(){
+  const s=[...HOLDINGS].sort((a,b)=>b.vaerdiDKK-a.vaerdiDKK);
+  document.getElementById('allocbar').innerHTML=s.map(h=>{const w=h.vaerdiDKK/T.vaerdi*100;
+    return `<div class="alloc-seg" style="width:${w}%;background:${catOf(h).color}" title="${h.navn} · ${krA(h.vaerdiDKK)} · ${da2(w)}%"></div>`;}).join('');
+  const by={};HOLDINGS.forEach(h=>by[h.kat]=(by[h.kat]||0)+h.vaerdiDKK);
+  document.getElementById('alloclegend').innerHTML=Object.keys(by).sort((a,b)=>by[b]-by[a])
+    .map(k=>{const c=CAT[k]||{label:k,color:"#9aa39c"};return `<span class="li"><span class="sw" style="background:${c.color}"></span>${c.label} <span class="amt">${krA(by[k])} · ${da2(by[k]/T.vaerdi*100)}%</span></span>`;}).join('');
+}
+const COLS=[
+ {k:'navn',t:'Beholdning',get:h=>h.navn,cell:h=>`<div class="nm"><span class="cat-dot" style="background:${catOf(h).color}"></span><span><span class="t">${h.navn}</span><span class="tk">${h.ticker||'—'} · ${h.valuta}</span></span></div>`},
+ {k:'antal',t:'Antal',get:h=>h.antal,cell:h=>`<span class="num">${da0(h.antal)}</span>`},
+ {k:'vaerdiDKK',t:'Værdi',get:h=>h.vaerdiDKK,cell:h=>`<span class="num">${krA(h.vaerdiDKK)}</span>`},
+ {k:'udbDKK',t:'Udbytte i år',cls:'udb',get:h=>h.udbDKK,cell:h=> h.udbDKK>0?
+     `<span class="num" style="color:var(--brass)">${da0(h.udbDKK)} kr</span>`+(h.flag==='guard'?'<span class="badge guard">guard</span>':'')
+     :(h.flag==='?'?'<span class="badge q">?</span>':'<span class="num" style="color:var(--faint)">0</span>')},
+ {k:'afk',t:'Afkast',get:h=>afkVal(h),cell:h=>{const v=afkVal(h);if(v==null)return '<span class="num" style="color:var(--faint)">—</span>';
+     return `<span class="num afk ${cls(v)}">${unit==='kr'?krS(v):pctS(v)}</span>`;}}
+];
+function renderTable(){
+  document.getElementById('thead').innerHTML=COLS.map(c=>{const on=c.k===sortKey;
+    const lab=c.k==='afk'?('Afkast · '+PERIODS[period].short):c.t;
+    return `<th data-k="${c.k}" aria-sort="${on?(sortDir<0?'descending':'ascending'):'none'}">${lab}<span class="ar">${on?(sortDir<0?'▼':'▲'):'▽'}</span></th>`;}).join('');
+  document.querySelectorAll('#thead th').forEach(th=>th.onclick=()=>{const k=th.dataset.k;
+    if(k===sortKey)sortDir*=-1;else{sortKey=k;sortDir=(k==='navn')?1:-1;}renderTable();});
+  const col=COLS.find(c=>c.k===sortKey);
+  const rows=[...HOLDINGS].sort((a,b)=>{
+    if(sortKey==='navn')return a.navn.localeCompare(b.navn,'da')*sortDir;
+    let x=col.get(a),y=col.get(b);x=(x==null?-1e15:x);y=(y==null?-1e15:y);return (x-y)*sortDir;});
+  document.getElementById('tbody').innerHTML=rows.map(h=>'<tr>'+COLS.map(c=>`<td class="${c.cls||''}">${c.cell(h)}</td>`).join('')+'</tr>').join('');
+  const tot=total(period);
+  document.getElementById('tfoot').innerHTML=`<tr><td>I alt · ${HOLDINGS.length} papirer</td><td></td>
+    <td class="num">${krA(T.vaerdi)}</td><td class="num" style="color:var(--brass)">${da0(T.udb)} kr</td>
+    <td class="num afk ${cls(unit==='kr'?tot.kr:tot.pct)}">${unit==='kr'?krS(tot.kr):pctS(tot.pct)}</td></tr>`;
+  document.getElementById('tblcount').textContent=`${HOLDINGS.length} papirer · samlet ${krA(T.vaerdi)}`;
+}
+function renderAll(){renderHeader();renderControls();sync();renderHero();renderChips();renderDividends();renderAllocation();renderTable();}
+
+function fail(msg){
+  document.getElementById('status').innerHTML=
+    `<h2>Kunne ikke hente data</h2><p>${msg}</p>
+     <p style="margin-top:12px">Tjek at <code>portfolio.json</code> ligger i samme mappe, og at siden åbnes via et webserver-link (fx GitHub Pages) — ikke som lokal fil.</p>`;
+}
+async function boot(){
+  try{
+    const res=await fetch('portfolio.json?t='+Date.now(),{cache:'no-store'});
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const data=await res.json();
+    META=data.meta||{}; HOLDINGS=data.holdings||[];
+    if(!HOLDINGS.length) return fail('portfolio.json indeholder ingen papirer.');
+    T={vaerdi:HOLDINGS.reduce((s,h)=>s+(+h.vaerdiDKK||0),0),
+       udb:HOLDINGS.reduce((s,h)=>s+(+h.udbDKK||0),0)};
+    T.yield=T.vaerdi?T.udb/T.vaerdi*100:0;
+    document.getElementById('status').style.display='none';
+    document.getElementById('app').style.display='';
+    renderAll();
+  }catch(e){ fail(e.message||String(e)); }
+}
+boot();
+</script>
+</body>
+</html>
