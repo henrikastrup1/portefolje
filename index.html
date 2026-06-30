@@ -189,14 +189,15 @@ const krA=n=>da0(n)+' kr';
 const pctS=(n,d=1)=>sign(n)+Math.abs(n).toLocaleString('da-DK',{minimumFractionDigits:d,maximumFractionDigits:d})+'%';
 const cls=n=>n>=0?'pos':'neg';
 const PERIODS={
+  d1:   {lab:"I dag",               short:"I dag",       kind:"period",base:"d1",div:false},
+  w1:   {lab:"Seneste uge",         short:"1 uge",       kind:"period",base:"w1",div:false},
+  m1:   {lab:"Seneste måned",       short:"1 md",        kind:"period",base:"m1",div:false},
+  m3:   {lab:"Seneste 3 måneder",   short:"3 mdr",       kind:"period",base:"m3",div:false},
   ytd_m:{lab:"I år · inkl. udbytte",short:"I år · m/udb",kind:"period",base:"ytd",div:true},
   ytd:  {lab:"I år · uden udbytte", short:"I år · u/udb",kind:"period",base:"ytd",div:false},
-  siden:{lab:"Siden anskaffelse",   short:"Siden køb",   kind:"siden"},
-  m3:   {lab:"Seneste 3 måneder",   short:"3 mdr",       kind:"period",base:"m3",div:false},
-  m1:   {lab:"Seneste måned",       short:"1 md",        kind:"period",base:"m1",div:false},
-  w1:   {lab:"Seneste uge",         short:"1 uge",       kind:"period",base:"w1",div:false}
+  siden:{lab:"Siden anskaffelse",   short:"Siden køb",   kind:"siden"}
 };
-const ORDER=["ytd_m","ytd","siden","m3","m1","w1"];
+const ORDER=["d1","w1","m1","m3","ytd_m","ytd","siden"];
 let META,HOLDINGS,T,period="ytd_m",unit="kr",sortKey="vaerdiDKK",sortDir=-1;
 
 function calc(h,pid){
