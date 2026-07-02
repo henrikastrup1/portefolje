@@ -2,8 +2,8 @@
   "meta": {
     "konto": "Nordnet · konto 10759504",
     "periode": "1. jan → 30. jun 2026",
-    "opdateret": "1. juli 2026",
-    "valutakurser": "USD 6.56 · NOK 0.66 · EUR 7.47 → DKK"
+    "opdateret": "2. juli 2026",
+    "valutakurser": "USD 6.54 · NOK 0.66 · EUR 7.47 → DKK"
   },
   "holdings": [
     {
@@ -13,17 +13,17 @@
       "kat": "fond",
       "antal": 6432,
       "gak": 138.35,
-      "vaerdiDKK": 853526.38,
-      "afkastDKK": -36340.82,
-      "sidenU": -4.08,
+      "vaerdiDKK": 859958.38,
+      "afkastDKK": -29908.82,
+      "sidenU": -3.36,
       "udbDKK": 68179.0,
       "udbPrAktie": 10.6,
       "ret": {
-        "w1": 0.4,
-        "m1": 2.0,
-        "m3": 4.9,
-        "ytd": 6.9,
-        "d1": 0.01
+        "w1": 1.1,
+        "m1": 2.7,
+        "m3": 5.7,
+        "ytd": 7.7,
+        "d1": 0.67
       },
       "flag": "",
       "priskilde": "yfinance"
@@ -35,17 +35,17 @@
       "kat": "fond",
       "antal": 5031,
       "gak": 244.94,
-      "vaerdiDKK": 1280892.63,
-      "afkastDKK": 48599.49,
-      "sidenU": 3.94,
+      "vaerdiDKK": 1323153.0,
+      "afkastDKK": 90859.86,
+      "sidenU": 7.37,
       "udbDKK": 42764.0,
       "udbPrAktie": 8.5,
       "ret": {
-        "w1": 2.0,
-        "m1": 3.8,
-        "m3": 7.1,
-        "ytd": 1.5,
-        "d1": 0.43
+        "w1": 4.0,
+        "m1": 7.7,
+        "m3": 10.6,
+        "ytd": 4.9,
+        "d1": 2.65
       },
       "flag": "",
       "priskilde": "yfinance"
@@ -57,17 +57,17 @@
       "kat": "fond",
       "antal": 4203,
       "gak": 153.46,
-      "vaerdiDKK": 775873.83,
-      "afkastDKK": 130881.45,
-      "sidenU": 20.29,
+      "vaerdiDKK": 778815.91,
+      "afkastDKK": 133823.53,
+      "sidenU": 20.75,
       "udbDKK": 21015.0,
       "udbPrAktie": 5.0,
       "ret": {
-        "w1": 0.2,
-        "m1": 1.1,
-        "m3": 13.6,
-        "ytd": 12.3,
-        "d1": 0.37
+        "w1": 1.1,
+        "m1": 1.0,
+        "m3": 14.0,
+        "ytd": 12.7,
+        "d1": 0.18
       },
       "flag": "",
       "priskilde": "yfinance"
@@ -85,11 +85,11 @@
       "udbDKK": 9165.0,
       "udbPrAktie": 3.7,
       "ret": {
-        "w1": 0.7,
-        "m1": 1.0,
+        "w1": 0.6,
+        "m1": 0.9,
         "m3": 15.5,
         "ytd": 14.0,
-        "d1": 0.1
+        "d1": -0.24
       },
       "flag": "",
       "priskilde": "yfinance"
@@ -101,17 +101,17 @@
       "kat": "fond",
       "antal": 495,
       "gak": 131.63,
-      "vaerdiDKK": 76725.0,
-      "afkastDKK": 11568.15,
-      "sidenU": 17.75,
+      "vaerdiDKK": 78111.0,
+      "afkastDKK": 12954.15,
+      "sidenU": 19.88,
       "udbDKK": 4900.0,
       "udbPrAktie": 9.9,
       "ret": {
-        "w1": 0.7,
-        "m1": 3.6,
-        "m3": 8.1,
-        "ytd": 10.2,
-        "d1": 0.16
+        "w1": 1.7,
+        "m1": 5.0,
+        "m3": 10.1,
+        "ytd": 12.2,
+        "d1": 2.35
       },
       "flag": "",
       "priskilde": "yfinance"
@@ -123,17 +123,17 @@
       "kat": "fond",
       "antal": 600,
       "gak": 160.33,
-      "vaerdiDKK": 124800.0,
-      "afkastDKK": 28602.0,
-      "sidenU": 29.73,
+      "vaerdiDKK": 121740.0,
+      "afkastDKK": 25542.0,
+      "sidenU": 26.55,
       "udbDKK": 1380.0,
       "udbPrAktie": 2.3,
       "ret": {
-        "w1": -0.6,
-        "m1": -0.4,
-        "m3": 22.1,
-        "ytd": 25.9,
-        "d1": -0.82
+        "w1": -4.2,
+        "m1": -3.6,
+        "m3": 19.1,
+        "ytd": 22.8,
+        "d1": -1.98
       },
       "flag": "",
       "priskilde": "yfinance"
@@ -145,17 +145,17 @@
       "kat": "fond",
       "antal": 1245,
       "gak": 10.29,
-      "vaerdiDKK": 84143.67,
-      "afkastDKK": -11608.43,
-      "sidenU": -12.12,
+      "vaerdiDKK": 79981.87,
+      "afkastDKK": -15773.04,
+      "sidenU": -16.47,
       "udbDKK": 150,
       "udbPrAktie": 0,
       "ret": {
-        "w1": -0.7,
-        "m1": -8.0,
-        "m3": 13.6,
-        "ytd": 24.4,
-        "d1": 2.49
+        "w1": -2.2,
+        "m1": -14.5,
+        "m3": 8.9,
+        "ytd": 18.2,
+        "d1": -4.02
       },
       "flag": "guard",
       "priskilde": "yfinance"
@@ -167,17 +167,17 @@
       "kat": "fond",
       "antal": 10,
       "gak": 2430.74,
-      "vaerdiDKK": 24805.0,
-      "afkastDKK": 497.6,
-      "sidenU": 2.05,
+      "vaerdiDKK": 24850.0,
+      "afkastDKK": 542.6,
+      "sidenU": 2.23,
       "udbDKK": 0.0,
       "udbPrAktie": 0.0,
       "ret": {
-        "w1": 0.3,
-        "m1": 0.9,
-        "m3": 14.8,
-        "ytd": 13.4,
-        "d1": 0.06
+        "w1": 0.4,
+        "m1": 0.6,
+        "m3": 15.0,
+        "ytd": 13.6,
+        "d1": 0.14
       },
       "flag": "?",
       "priskilde": "yfinance"
@@ -189,17 +189,17 @@
       "kat": "aktie",
       "antal": 1200,
       "gak": 334.27,
-      "vaerdiDKK": 381720.01,
-      "afkastDKK": -19403.99,
-      "sidenU": -4.84,
+      "vaerdiDKK": 398400.0,
+      "afkastDKK": -2724.0,
+      "sidenU": -0.68,
       "udbDKK": 9540.0,
       "udbPrAktie": 7.95,
       "ret": {
-        "w1": 2.1,
-        "m1": 11.7,
-        "m3": 34.3,
-        "ytd": -0.4,
-        "d1": 1.11
+        "w1": 5.2,
+        "m1": 19.6,
+        "m3": 40.1,
+        "ytd": 4.0,
+        "d1": 2.47
       },
       "flag": "",
       "priskilde": "yfinance"
@@ -211,17 +211,17 @@
       "kat": "aktie",
       "antal": 350,
       "gak": 45.26,
-      "vaerdiDKK": 186550.98,
-      "afkastDKK": 82659.04,
-      "sidenU": 79.56,
-      "udbDKK": 2433.0,
+      "vaerdiDKK": 190541.48,
+      "afkastDKK": 86975.88,
+      "sidenU": 83.98,
+      "udbDKK": 2426.0,
       "udbPrAktie": 1.06,
       "ret": {
-        "w1": 0.8,
-        "m1": 4.0,
-        "m3": 7.5,
-        "ytd": 19.2,
-        "d1": -1.67
+        "w1": 3.5,
+        "m1": 6.9,
+        "m3": 9.2,
+        "ytd": 22.1,
+        "d1": 2.44
       },
       "flag": "",
       "priskilde": "yfinance"
@@ -233,17 +233,17 @@
       "kat": "aktie",
       "antal": 150,
       "gak": 564.02,
-      "vaerdiDKK": 38842.16,
-      "afkastDKK": -16902.76,
-      "sidenU": -30.32,
-      "udbDKK": 500.0,
+      "vaerdiDKK": 40851.22,
+      "afkastDKK": -15291.34,
+      "sidenU": -27.24,
+      "udbDKK": 503.0,
       "udbPrAktie": 5.0564,
       "ret": {
-        "w1": -9.2,
-        "m1": -11.8,
-        "m3": -13.2,
-        "ytd": -23.2,
-        "d1": -2.34
+        "w1": -4.7,
+        "m1": -8.2,
+        "m3": -9.4,
+        "ytd": -19.8,
+        "d1": 3.9
       },
       "flag": "",
       "priskilde": "yfinance"
@@ -255,17 +255,17 @@
       "kat": "aktie",
       "antal": 16,
       "gak": 918.01,
-      "vaerdiDKK": 178115.15,
-      "afkastDKK": 81784.03,
-      "sidenU": 84.9,
+      "vaerdiDKK": 184897.91,
+      "afkastDKK": 88869.37,
+      "sidenU": 92.54,
       "udbDKK": 0.0,
       "udbPrAktie": 0.0,
       "ret": {
-        "w1": 2.3,
-        "m1": -1.9,
-        "m3": -1.3,
-        "ytd": -14.0,
-        "d1": 0.85
+        "w1": 9.2,
+        "m1": 5.7,
+        "m3": 3.0,
+        "ytd": -10.4,
+        "d1": 1.46
       },
       "flag": "",
       "priskilde": "yfinance"
@@ -277,17 +277,17 @@
       "kat": "aktie",
       "antal": 100,
       "gak": 16.15,
-      "vaerdiDKK": 22298.63,
-      "afkastDKK": 11706.78,
-      "sidenU": 110.53,
+      "vaerdiDKK": 23094.85,
+      "afkastDKK": 12536.27,
+      "sidenU": 118.73,
       "udbDKK": 0.0,
       "udbPrAktie": 0.0,
       "ret": {
-        "w1": 7.3,
-        "m1": 11.3,
-        "m3": 4.2,
-        "ytd": -9.3,
-        "d1": 3.12
+        "w1": 9.4,
+        "m1": 20.7,
+        "m3": 6.5,
+        "ytd": -5.8,
+        "d1": 0.93
       },
       "flag": "",
       "priskilde": "yfinance"
@@ -299,17 +299,17 @@
       "kat": "aktie",
       "antal": 200,
       "gak": 130,
-      "vaerdiDKK": 17688.0,
-      "afkastDKK": -8312.0,
-      "sidenU": -31.97,
+      "vaerdiDKK": 18000.0,
+      "afkastDKK": -8000.0,
+      "sidenU": -30.77,
       "udbDKK": 0.0,
       "udbPrAktie": 0.0,
       "ret": {
-        "w1": -1.1,
-        "m1": -8.1,
-        "m3": -12.2,
-        "ytd": -19.5,
-        "d1": 1.35
+        "w1": 0.8,
+        "m1": -7.3,
+        "m3": -10.6,
+        "ytd": -18.1,
+        "d1": 1.19
       },
       "flag": "",
       "priskilde": "yfinance"
@@ -321,17 +321,17 @@
       "kat": "akk",
       "antal": 299,
       "gak": 43.63,
-      "vaerdiDKK": 23527.76,
-      "afkastDKK": -73975.68,
-      "sidenU": -75.87,
+      "vaerdiDKK": 22397.62,
+      "afkastDKK": -75108.69,
+      "sidenU": -77.03,
       "udbDKK": 37.0,
       "udbPrAktie": 0.0166,
       "ret": {
-        "w1": -0.3,
-        "m1": -7.4,
-        "m3": 15.7,
-        "ytd": 26.2,
-        "d1": 2.71
+        "w1": -1.9,
+        "m1": -13.9,
+        "m3": 11.1,
+        "ytd": 20.2,
+        "d1": -4.08
       },
       "flag": "",
       "priskilde": "yfinance"
@@ -359,17 +359,17 @@
       "kat": "akk",
       "antal": 967.9439,
       "gak": 256.07,
-      "vaerdiDKK": 268769.0,
-      "afkastDKK": 20907.6,
-      "sidenU": 8.44,
+      "vaerdiDKK": 270995.25,
+      "afkastDKK": 23133.86,
+      "sidenU": 9.33,
       "udbDKK": 0.0,
       "udbPrAktie": 0.0,
       "ret": {
-        "w1": 0.5,
-        "m1": 2.2,
-        "m3": 5.8,
-        "ytd": 0.4,
-        "d1": 0.24
+        "w1": 0.4,
+        "m1": 3.8,
+        "m3": 6.7,
+        "ytd": 1.2,
+        "d1": 0.83
       },
       "flag": "",
       "priskilde": "yfinance"
@@ -387,11 +387,11 @@
       "udbDKK": 0,
       "udbPrAktie": 0,
       "ret": {
-        "w1": 0.8,
-        "m1": -0.5,
-        "m3": 18.0,
-        "ytd": 12.0,
-        "d1": 1.3
+        "w1": 1.9,
+        "m1": -0.2,
+        "m3": 19.1,
+        "ytd": 13.1,
+        "d1": 0.97
       },
       "flag": "",
       "priskilde": "nordnet"
